@@ -5,10 +5,12 @@ set showcmd                     " display incomplete commands
 filetype plugin indent on       " load file type plugins + indentation
 
 "" Whitespace
-set nowrap                      " don't wrap lines
 set tabstop=2 shiftwidth=2      " a tab is two spaces (or set this to 4)
 set expandtab                   " use spaces, not tabs (optional)
 set backspace=indent,eol,start  " backspace through everything in insert mode
+
+"" Spelling
+set spell
 
 "" Searching
 set hlsearch                    " highlight matches
@@ -16,7 +18,33 @@ set incsearch                   " incremental searching
 set ignorecase                  " searches are case insensitive...
 set smartcase                   " ... unless they contain at least one capital letter
 set number
-set statusline=%t\ %y\ \ %{&ff};\ [%l,%c] "status line at the bottom name type os line column
+
 set wildmode=list:longest       "auto completion showing everything
 set visualbell                  "no more beeping
 colorscheme torte         " colors for the editor
+
+"status line
+set laststatus=2                "make status line permanent
+
+
+function! FileSize()
+     let bytes = getfsize(expand("%:p"))
+     if bytes <= 0
+         return ""
+     endif
+     if bytes < 1024
+         return bytes
+     else
+         return (bytes / 1024) . "K"
+     endif
+endfunction
+
+set statusline=
+set statusline+=%f\  
+set statusline+=%y%*\ 
+set statusline+=%{&ff}\ 
+set statusline+=%{FileSize()}
+set statusline+=%=
+
+set statusline+=%#error#%n%*\ 
+set statusline+=[%l,%c]
