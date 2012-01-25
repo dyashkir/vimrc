@@ -48,3 +48,9 @@ set statusline+=%=
 
 set statusline+=%#error#%n%*\ 
 set statusline+=[%l,%c]
+
+" ================ Turn Off Swap Files ==============
+
+set noswapfile
+set nobackup
+set nowb
