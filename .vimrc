@@ -4,13 +4,13 @@ set encoding=utf-8
 set showcmd                     " display incomplete commands
 filetype plugin indent on       " load file type plugins + indentation
 
-"" Whitespace
+"" Whtespace
 set tabstop=2 shiftwidth=2      " a tab is two spaces (or set this to 4)
 set expandtab                   " use spaces, not tabs (optional)
 set backspace=indent,eol,start  " backspace through everything in insert mode
 
 "" Spelling
-set spell
+set nospell
 
 "" Searching
 set hlsearch                    " highlight matches
@@ -54,3 +54,13 @@ set statusline+=[%l,%c]
 set noswapfile
 set nobackup
 set nowb
+
+"disable arrow keys.."
+map <left> <nop>
+map <right> <nop>
+map <up> <nop>
+map <down> <nop>
+map! <left> <nop>
+map! <right> <nop>
+map! <up> <nop>
+map! <down> <nop>
