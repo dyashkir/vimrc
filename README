@@ -1,2 +1,9 @@
 Create a symbolic link
     ln -s .vimrc ../.vimrc
+
+Extra stuff
+
+    jshint
+
+    MiniBufExpl
+

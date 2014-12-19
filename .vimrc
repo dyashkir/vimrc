@@ -55,6 +55,29 @@ set noswapfile
 set nobackup
 set nowb
 
+"movement byrow not line"
+nmap j gj
+nmap k gk
+
+"search defaults"
+set incsearch
+set ignorecase
+set smartcase
+set hlsearch
+nmap \q :nohlsearch<CR>
+
+"previous buffer with Ctrl - e"
+nmap <C-e> :e#<CR>
+
+"previous and next buffer"
+nmap <C-n> :bnext<CR>
+nmap <C-p> :bprev<CR>
+
+"ignore for ctr-p"
+let g:ctrlp_custom_ignore = '\v\~$|\.(o|swp|pyc|wav|mp3|ogg|blend)$|(^|[/\\])\.(hg|git|bzr)($|[/\\])|__init__\.py|node_modules'
+
+let ctrlp_max_depth = 3
+
 "disable arrow keys.."
 map <left> <nop>
 map <right> <nop>
