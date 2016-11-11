@@ -5,6 +5,7 @@ set showcmd                     " display incomplete commands
 filetype plugin indent on       " load file type plugins + indentation
 
 au FileType python setl sw=4 sts=4 et
+set pastetoggle=<F10>
 
 "" Whtespace
 set tabstop=2 shiftwidth=2      " a tab is two spaces (or set this to 4)
