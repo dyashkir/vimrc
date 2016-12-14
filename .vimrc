@@ -15,13 +15,6 @@ set backspace=indent,eol,start  " backspace through everything in insert mode
 "" Spelling
 set nospell
 
-"" Searching
-set hlsearch                    " highlight matches
-set incsearch                   " incremental searching
-set ignorecase                  " searches are case insensitive...
-set smartcase                   " ... unless they contain at least one capital letter
-set number
-
 set wildmode=list:longest       "auto completion showing everything
 set visualbell                  "no more beeping
 colorscheme torte         " colors for the editor
@@ -68,6 +61,9 @@ set ignorecase
 set smartcase
 set hlsearch
 nmap \q :nohlsearch<CR>
+
+"relative line numbers"
+set relativenumber
 
 "previous buffer with Ctrl - e"
 nmap <C-e> :e#<CR>
