@@ -99,5 +99,7 @@ map! <down> <nop>
 
 map <c-f> :call JsBeautify()
 
+:au BufWrite <buffer> :call JsBeautify()
+
 "pathogen"
 call pathogen#infect()
