@@ -8,7 +8,7 @@ au FileType python setl sw=4 sts=4 et
 set pastetoggle=<F10>
 
 "" Whtespace
-set tabstop=2 shiftwidth=2      " a tab is two spaces (or set this to 4)
+set tabstop=4 shiftwidth=4      " a tab is two spaces (or set this to 4)
 set expandtab                   " use spaces, not tabs (optional)
 set backspace=indent,eol,start  " backspace through everything in insert mode
 
@@ -21,6 +21,16 @@ colorscheme torte         " colors for the editor
 
 "status line
 set laststatus=2                "make status line permanent
+
+"syntastic"
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 
 function! FileSize()
@@ -86,6 +96,8 @@ map! <left> <nop>
 map! <right> <nop>
 map! <up> <nop>
 map! <down> <nop>
+
+map <c-f> :call JsBeautify()
 
 "pathogen"
 call pathogen#infect()
